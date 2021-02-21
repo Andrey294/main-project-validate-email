@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
       let emailPart = email.split('@')
       //! Условие
       if (emailPart[1]) {
-        if (emailPart[1] == gmail ||emailPart[1] == ukr||emailPart[1] == mail) {
+        if (emailPart[0] & emailPart[1] == gmail ||emailPart[0] & emailPart[1] == ukr||emailPart[0] & emailPart[1] == mail) {
           return 1
         } else {
           return 0
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function(){
           let email = $(".email").val();
           let $error = $(".error");
           $error.text("");
-
+          
           if (validateEmail(email)) {
             $error.fadeOut();
             sendForm();
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function(){
           } else {
             $error.fadeIn();
             $error.text(" Введите коректный почтовый адрес");
-            emailInput.css({'border':'3px solid #cc3825'});
+            emailInput.css({'border':'2px solid red'});
           }
           return false;
     }
@@ -54,14 +54,14 @@ document.addEventListener("DOMContentLoaded", function(){
       let email = $(".email").val();
       let $error = $(".error");
       $error.text("");
-
+      
       if (validateEmail(email)) {
         $error.fadeOut();
         emailInput.css({'border':'none'});
       } else {
         $error.fadeIn();
         $error.text(" Введите коректный почтовый адрес");
-        emailInput.css({'border':'3px solid #cc3825'});
+        emailInput.css({'border':'2px solid red'});
       }
       return false;
     }

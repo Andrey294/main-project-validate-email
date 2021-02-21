@@ -15,40 +15,82 @@ html{
     width: 100%;
     max-width: 1100px;
     height: 100vh;
-    background-color: tomato;
     margin: 0 auto;
     padding-top: 100px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.form{
+.error{
+    color: red;
+    margin-bottom: 30px;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 13px 22px;
+    border: 2px solid #2fdac5;
+    border-radius: 8px;
+    background: #27ceba;
+    color: #fefefe;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.btn:hover{
+    background-color: #27ceba;
+}
+
+.form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+}   
 
-.email{
-    width: 300px;
-    font-size: 14px;
-    margin-top: 15px;   
+.form--feedback {
+    width: 450px;
+    padding: 0px 10px;
+    margin: 0 auto;
+}  
+   
+.form__label {
+    margin-bottom: 10px;
+    color: #171717;
+    font-weight: 600;
+}      
+
+.form__label--feedback {
+    color: #3d4f9f;
+}
+    
+.form__input {
     margin-bottom: 15px;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    outline: #171717 solid 1px;
+    color: #171717;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    transition: all .3s ease-in-out;
+}    
+.form__input::placeholder {
+    color: #131212;
+}
+.form__input:hover, .form__input:focus {
+    border: 1px solid #2fdac5;
+    outline: 1px solid #2fdac5;
+}
+.form__input--feedback {
+    outline: none;
+    border: 1px solid #3d4f9f;
+    border-radius: 8px;
+    background: transparent;
+    transition: all .3s ease-in-out;
+}
+.form__input--feedback:hover,.form__input--feedback:focus {
+    border: 1px solid #2fdac5;
+    outline: none;
+    background: #fafafa;
 }
 
-.submit{
-    width: 300px;
-    height: 25px;
-}
-
-
-/* input:invalid {
-    border: 2px dashed red;
-  }
-  
-  input:invalid:required {
-    background-image: linear-gradient(to right, pink, lightgreen);
-  }
-  
-  input:valid {
-    border: 2px solid black;
-  } */

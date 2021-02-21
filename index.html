@@ -9,13 +9,23 @@
 </head>
 <body>
     <div class="container">
-        <form class="form" action="javascript:void(0)">
-            <label for="submit">Введите email</label>
-            <input class="email" type="text" placeholder="E-mail">
+       
+        <form class="form form--feedback validate" action="#" method="POST">
+
+            <label class="form__label form__label--feedback" for="name">Имя</label>
+            <input class="form__input form__input--feedback" type="text" id="text" placeholder="Введите Ваше имя" minlength="2" maxlength="25" name="name" required>
+  
+            <label class="form__label form__label--feedback" for="phone">Номер телефона</label>
+            <input class="form__input form__input--feedback" type="tel" id="phone" placeholder="Введите Ваш номер телефона" minlength="10" maxlength="10" name="phone" pattern="\d([0-9]{10})" title="Используйте формат: 0995557722" required>
+  
+            <label class="form__label form__label--feedback" for="email">Почта</label>
+            <input class="form__input form__input--feedback email" type="email" id="email" placeholder="Введите Вашу почту" name="email" required>
             <span class="error"></span>
-            <button class="btn-submit" type="submit">Get Discount</button>
-            
-        </form>  
+            <div class="feedback__actions">
+              <button class="btn btn-submit" type="submit">Отправить</button>
+            </div>
+  
+          </form>  <!-- /. Feedback Form-->
     </div>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
