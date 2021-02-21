@@ -5,26 +5,17 @@ document.addEventListener("DOMContentLoaded", function(){
     $(function() {
       $(".btn-submit").on("click", validateForm);
       emailInput.on("blur", validateBlur);
-      //! Переменные для сравнения фильтрации
-      let gmail = 'gmail.com';
-      let ukr = 'ukr.net';
-      let mail = 'mail.ru';
+      
+        // Validate email + фильтрация условием на налчиие домена
+        function validateEmail(email) {
+          var emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((gmail\.com)|(ukr\.net)|(mail\.ru))$/;
         
-    //* Validate email
-    function validateEmail(email) {
-      //! Создаём масив с двух частей до @ и после
-      let emailPart = email.split('@')
-      //! Условие
-      if (emailPart[1]) {
-        if (emailPart[0] & emailPart[1] == gmail ||emailPart[0] & emailPart[1] == ukr||emailPart[0] & emailPart[1] == mail) {
-          return 1
-        } else {
-          return 0
+          if(emailPattern.test(email)){
+              return 1;
+          }else{
+              return 0;
+          } 
         }
-      } else {
-        return 0;
-      }
-    }
          
     //* send form
     function sendForm() {
@@ -41,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(){
           if (validateEmail(email)) {
             $error.fadeOut();
             sendForm();
-            emailInput.css({'border':'none'});
+            emailInput.css({'border':'1px solid #3d4f9f'});
           } else {
             $error.fadeIn();
             $error.text(" Введите коректный почтовый адрес");
@@ -57,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
       
       if (validateEmail(email)) {
         $error.fadeOut();
-        emailInput.css({'border':'none'});
+        emailInput.css({'border':'1px solid #3d4f9f'});
       } else {
         $error.fadeIn();
         $error.text(" Введите коректный почтовый адрес");
